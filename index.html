@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.Lentes - Sustentabilidade e Saúde Visual</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #B22222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Seção Principal */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.02);
+        }
+
+        h2 {
+            color: #B22222;
+            border-left: 5px solid #B22222;
+            padding-left: 10px;
+        }
+
+        /* Botão */
+        .btn {
+            display: inline-block;
+            background: #B22222;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #8B1A1A;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #B22222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Gráficos Responsivos */
+        canvas {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                font-size: 1em;
+                padding: 15px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>M.Lentes - Saúde Visual para Todos</h1>
+        <p>ODS 12 - Consumo Responsável | ODS 3 - Saúde e Bem-Estar</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2>Nossa Missão</h2>
+            <p>O programa M.Lentes nasce do compromisso de promover a sustentabilidade e melhorar a qualidade de vida das pessoas por meio do acesso à saúde visual. 
+            Pequenas ações podem gerar grandes impactos, e por isso criamos esta iniciativa!</p>
+            <p>Estamos em busca de <strong>parcerias com empresas, ONGs e profissionais</strong> para ampliar o alcance da nossa campanha. Queremos garantir que estudantes de comunidades carentes tenham acesso a óculos de qualidade, melhorando seu desempenho escolar.</p>
+            <a href="mailto:e-mail@e-mail.com?subject=Parceria M.Lentes" class="btn">Quero Ser um Parceiro</a>
+        </div>
+
+        <div class="card">
+            <h2>Impacto da Falta de Tratamento Visual para Estudantes</h2>
+            <p>Problemas de visão não tratados afetam diretamente o desempenho escolar de milhões de crianças. Veja alguns dados:</p>
+            <ul>
+                <li>⚠️ 30% dos alunos com dificuldades de aprendizado têm problemas de visão não diagnosticados.</li>
+                <li>📉 Crianças com visão ruim têm 3x mais chances de ter notas baixas.</li>
+                <li>🎓 25% dos estudantes precisam de óculos, mas muitos não têm acesso.</li>
+            </ul>
+            <canvas id="graficoImpactoEstudantes"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Descarte Correto de Óculos</h2>
+            <p>Milhões de óculos são descartados incorretamente todos os anos. Faça sua parte: doe seus óculos antigos para reciclagem e ajude o meio ambiente!</p>
+            <canvas id="graficoDescarte"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Saúde Visual para Todos</h2>
+            <p>2,2 bilhões de pessoas no mundo têm deficiência visual, e quase metade desses casos poderiam ser evitados com acesso a óculos.</p>
+            <canvas id="graficoSaude"></canvas>
+        </div>
+
+        <div class="card">
+            <h2>Contato</h2>
+            <p>Email: <strong>e-mail@e-mail.com</strong></p>
+            <p>Endereço: xxxxxxxxx, xxxx - São Paulo-SP</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 M.Lentes | Sustentabilidade e Saúde Visual</p>
+    </footer>
+
+    <script>
+        // Gráfico: Impacto nos Estudantes
+        const ctxImpacto = document.getElementById('graficoImpactoEstudantes').getContext('2d');
+        new Chart(ctxImpacto, {
+            type: 'bar',
+            data: {
+                labels: ['Dificuldades de Aprendizado', 'Baixo Desempenho Escolar', 'Necessidade de Óculos'],
+                datasets: [{
+                    label: 'Percentual de Estudantes Afetados',
+                    data: [30, 3, 25],
+                    backgroundColor: ['#B22222', '#ff9999', '#ff6666']
+                }]
+            }
+        });
+
+        // Gráfico: Descarte de Óculos
+        const ctxDescarte = document.getElementById('graficoDescarte').getContext('2d');
+        new Chart(ctxDescarte, {
+            type: 'pie',
+            data: {
+                labels: ['Reciclado', 'Descartado Incorretamente'],
+                datasets: [{
+                    data: [90, 10],
+                    backgroundColor: ['#B22222', '#ff9999']
+                }]
+            }
+        });
+
+        // Gráfico: Saúde Visual
+        const ctxSaude = document.getElementById('graficoSaude').getContext('2d');
+        new Chart(ctxSaude, {
+            type: 'bar',
+            data: {
+                labels: ['Deficiência Visual', 'Casos Evitáveis'],
+                datasets: [{
+                    label: 'Milhões de Pessoas',
+                    data: [2200, 1000],
+                    backgroundColor: ['#B22222', '#ff9999']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
