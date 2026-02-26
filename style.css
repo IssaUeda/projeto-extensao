@@ -1,0 +1,89 @@
+/* estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* cabeçalho */
+header {
+    background: #B22222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* seção Principal */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    color: #B22222;
+    border-left: 5px solid #B22222;
+    padding-left: 10px;
+}
+
+/* botão */
+.btn {
+    display: inline-block;
+    background: #B22222;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #8B1A1A;
+}
+
+/* rodapé */
+footer {
+    background: #B22222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}
+
+/* gráficos Responsivos */
+canvas {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
+
+/* responsividade */
+@media (max-width: 768px) {
+    header {
+        font-size: 1em;
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
